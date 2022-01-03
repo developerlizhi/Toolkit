@@ -1,0 +1,1 @@
+start javaw -Dfile.encoding=utf-8 -jar -Xmn256m -Xms512m -Xmx512m xxx.jar

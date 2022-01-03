@@ -1,4 +1,6 @@
-#! /bin/bash
+#!/bin/sh
+# Copyright © 2021, developerlizhi All Rights Reserved.
+# Date:2021-12-31
 cat>/etc/hosts<<EOF
 ##
 # Host Database

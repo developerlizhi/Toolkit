@@ -1,0 +1,14 @@
+# Copyright © 2021, developerlizhi All Rights Reserved.
+# Date:2021-12-31
+
+[Unit]
+Description=gitea
+Documentation= http://www.jinbuguo.com/systemd/systemd.service.html
+
+[Service]
+User=root
+ExecStart=/home/gitea/gitea-1.9-linux-amd64
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
