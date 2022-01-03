@@ -1,0 +1,17 @@
+# Copyright © 2021, developerlizhi All Rights Reserved.
+# Date:2021-12-31
+
+[Unit]
+Description=redis
+Documentation= http://www.jinbuguo.com/systemd/systemd.service.html
+
+[Service]
+User=root
+Type=forking
+PrivateTmp=true
+ExecStart=/usr/local/redis/redis.sh start
+ExecStop=/usr/local/redis/redis.sh stop
+
+[Install]
+WantedBy=multi-user.target
+
