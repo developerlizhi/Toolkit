@@ -2,14 +2,16 @@ version: '2'
 services:
   zookeeper:
     image: wurstmeister/zookeeper
-    container_name: "kafka-zk"
+    container_name: "zookeeper"
     ports:
       - "2181:2181"
   kafka:
     image: wurstmeister/kafka
-    container_name: "kafka-single"
+    container_name: "kafka"
     ports:
       - "9092:9092"
+    depends_on:
+      - zookeeper
     environment:
       # client 要访问的 broker 地址
       KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
@@ -30,4 +32,4 @@ services:
       KAFKA_LOG_DIRS: "/kafka/logs"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ~/opt/env/kafka/logs:/kafka/logs
+      - /usr/local/kafka/logs:/kafka/logs
