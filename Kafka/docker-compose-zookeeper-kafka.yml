@@ -5,11 +5,13 @@ services:
     container_name: "zookeeper"
     ports:
       - "2181:2181"
+    restart: always
   kafka:
     image: wurstmeister/kafka
     container_name: "kafka"
     ports:
       - "9092:9092"
+    restart: always
     depends_on:
       - zookeeper
     environment:
